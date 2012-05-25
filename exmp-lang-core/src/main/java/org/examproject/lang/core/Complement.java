@@ -17,7 +17,7 @@ package org.examproject.lang.core;
 /**
  * @author hiroxpepe
  */
-public class Complement extends Phrase {
+public class Complement extends Clause {
     
     ///////////////////////////////////////////////////////////////////////////
     // constructor

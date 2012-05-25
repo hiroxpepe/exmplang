@@ -14,16 +14,34 @@
  
 package org.examproject.lang.core;
 
+import org.examproject.lang.verb.value.Tense;
+
 /**
  * @author hiroxpepe
  */
-public class Verb extends Clause {
+public class Clause {
     
+    ///////////////////////////////////////////////////////////////////////////
+    // fields
+    
+    private final Phrase phrase;
+
     ///////////////////////////////////////////////////////////////////////////
     // constructor
     
-    public Verb(String value) {
-        super(value);
+    public Clause(String value) {
+        phrase = new Phrase();
+        phrase.setValue(value);
     }
     
+    ///////////////////////////////////////////////////////////////////////////
+    // public methods
+    
+    public String getValue(Tense tense) {
+        if (this instanceof Verb) {
+            return phrase.getValue(tense);
+        }
+        return phrase.getValue();
+    }
+     
 }

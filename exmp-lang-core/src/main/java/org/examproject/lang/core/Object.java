@@ -17,7 +17,7 @@ package org.examproject.lang.core;
 /**
  * @author hiroxpepe
  */
-public class Object extends Phrase {
+public class Object extends Clause {
     
     ///////////////////////////////////////////////////////////////////////////
     // constructor

@@ -14,9 +14,10 @@
  
 package org.examproject.lang.core;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import org.examproject.lang.value.Tense;
+import org.examproject.lang.verb.value.Tense;
 
 /**
  * @author hiroxpepe
@@ -26,13 +27,15 @@ public class Word {
     ///////////////////////////////////////////////////////////////////////////
     // fields
     
-    private List<Morpheme> morphemeList;
+    private final List<Morpheme> morphemeList;
     
     ///////////////////////////////////////////////////////////////////////////
     // constructor
     
-    public Word(List<Morpheme> morphemeList) {
-        this.morphemeList = morphemeList;
+    public Word(String value) {
+        morphemeList = new ArrayList<Morpheme>();
+        Morpheme morpheme = new Morpheme(value);
+        morphemeList.add(morpheme);
     }
     
     ///////////////////////////////////////////////////////////////////////////
@@ -67,17 +70,6 @@ public class Word {
             return "will " + text;
         }
         return text;
-    }
-    
-    ///////////////////////////////////////////////////////////////////////////
-    // accessor methods
-
-    public List<Morpheme> getMorphemeList() {
-        return morphemeList;
-    }
-
-    public void setMorphemeList(List<Morpheme> morphemeList) {
-        this.morphemeList = morphemeList;
     }
     
 }

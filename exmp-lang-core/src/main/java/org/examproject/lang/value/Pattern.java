@@ -17,10 +17,12 @@ package org.examproject.lang.value;
 /**
  * @author hiroxpepe
  */
-public enum Structure {
+public enum Pattern {
     SV,
     SVC,
+    SVA,
     SVO,
     SVOO,
-    SVOC
+    SVOC,
+    SVOA
 }

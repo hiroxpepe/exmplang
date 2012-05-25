@@ -14,8 +14,8 @@
  
 package org.examproject.lang.core;
 
-import org.examproject.lang.value.Tense;
-import org.examproject.lang.value.Structure;
+import org.examproject.lang.value.Pattern;
+import org.examproject.lang.verb.value.Tense;
 
 /**
  * @author hiroxpepe
@@ -33,7 +33,7 @@ public class Sentence {
     
     private Complement complement;
     
-    private Structure structure;
+    private Pattern structure;
     
     ///////////////////////////////////////////////////////////////////////////
     // public methods

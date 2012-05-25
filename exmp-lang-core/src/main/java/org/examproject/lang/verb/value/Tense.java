@@ -12,7 +12,7 @@
  * limitations under the License.
  */
  
-package org.examproject.lang.value;
+package org.examproject.lang.verb.value;
 
 /**
  * @author hiroxpepe

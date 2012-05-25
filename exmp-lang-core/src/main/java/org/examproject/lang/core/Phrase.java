@@ -11,59 +11,45 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+  
 package org.examproject.lang.core;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.examproject.lang.value.Tense;
+import org.examproject.lang.verb.value.Tense;
 
 /**
  * @author hiroxpepe
  */
 public class Phrase {
-    
+        
     ///////////////////////////////////////////////////////////////////////////
     // fields
     
-    private List<Word> wordList;
-
+    private final List<Word> wordList;
+    
     ///////////////////////////////////////////////////////////////////////////
     // constructor
     
-    public Phrase(String value) {
-        List<Morpheme> morphemeList = new ArrayList<Morpheme>();
-        Morpheme morpheme = new Morpheme(value);
-        morphemeList.add(morpheme);
-        
-        List<Word> wordList = new ArrayList<Word>();
-        Word word = new Word(morphemeList);
-        wordList.add(word);
-        
-        this.wordList = wordList;
+    public Phrase() {
+        wordList = new ArrayList<Word>();
     }
     
     ///////////////////////////////////////////////////////////////////////////
     // public methods
     
     public String getValue(Tense tense) {
-        // TODO: temporary...
-        if (this instanceof Verb) {
-            return wordList.get(0).getValue(tense);
-        }
+        return wordList.get(0).getValue(tense);
+    }
+    
+    public String getValue() {
         return wordList.get(0).getValue();
     }
     
-    ///////////////////////////////////////////////////////////////////////////
-    // accessor methods
-    
-    public List<Word> getWordList() {
-        return wordList;
-    }
-
-    public void setWordList(List<Word> wordList) {
-        this.wordList = wordList;
+    public void setValue(String value) {
+        Word word = new Word(value);
+        wordList.add(word);
     }
     
 }
